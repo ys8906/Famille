@@ -1,5 +1,9 @@
 # Famille
 
+## 検討事項
+- Vuexにtsを適用するかどうか
+  - 著しく相性が悪いっぽい
+
 ## Build Setup
 
 ```bash

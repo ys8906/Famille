@@ -2,29 +2,33 @@
   <div class="container">
     <div>
       <h1 class="title">
-        Famille
+        Member
       </h1>
-      <div class="links">
-        <nuxt-link
-          to="/members"
-          class="button--green"
-        >
-          Members
-        </nuxt-link>
+    </div>
+    <div>
+      <div
+        v-for="member in this.$store.state.members"
+        :key="member.name"
+      >
+        <p>{{ member.name }}</p>
+        <p>{{ member.description }}</p>
       </div>
     </div>
   </div>
 </template>
 
 <script lang="ts">
-import Vue from 'vue'
+import Vue from "vue"
 
 export default Vue.extend({
-  data() {
+  head() {
     return {
-      default: "top page"
+      title: "Members"
     }
   },
+  mounted() {
+    console.log(this.$store.state.members)
+  }
 })
 </script>
 

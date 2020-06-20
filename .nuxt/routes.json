@@ -1,5 +1,12 @@
 [
   {
+    "name": "members",
+    "path": "/members",
+    "component": "/Users/yoshitosato/programming/Famille/pages/members.vue",
+    "chunkName": "pages/members",
+    "_name": "_e07a94fc"
+  },
+  {
     "name": "index",
     "path": "/",
     "component": "/Users/yoshitosato/programming/Famille/pages/index.vue",
