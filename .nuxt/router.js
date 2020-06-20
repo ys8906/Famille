@@ -3,7 +3,11 @@ import Router from 'vue-router'
 import { interopDefault } from './utils'
 import scrollBehavior from './router.scrollBehavior.js'
 
+const _8d18bb9e = () => interopDefault(import('../pages/check.vue' /* webpackChunkName: "pages/check" */))
 const _e07a94fc = () => interopDefault(import('../pages/members.vue' /* webpackChunkName: "pages/members" */))
+const _47bc7e1d = () => interopDefault(import('../pages/menus.vue' /* webpackChunkName: "pages/menus" */))
+const _8eb7fa8c = () => interopDefault(import('../pages/order/index.vue' /* webpackChunkName: "pages/order/index" */))
+const _a63fc5fe = () => interopDefault(import('../pages/order/complete.vue' /* webpackChunkName: "pages/order/complete" */))
 const _718ff0fb = () => interopDefault(import('../pages/index.vue' /* webpackChunkName: "pages/index" */))
 
 // TODO: remove in Nuxt 3
@@ -23,9 +27,25 @@ export const routerOptions = {
   scrollBehavior,
 
   routes: [{
+    path: "/check",
+    component: _8d18bb9e,
+    name: "check"
+  }, {
     path: "/members",
     component: _e07a94fc,
     name: "members"
+  }, {
+    path: "/menus",
+    component: _47bc7e1d,
+    name: "menus"
+  }, {
+    path: "/order",
+    component: _8eb7fa8c,
+    name: "order"
+  }, {
+    path: "/order/complete",
+    component: _a63fc5fe,
+    name: "order-complete"
   }, {
     path: "/",
     component: _718ff0fb,

@@ -2,16 +2,37 @@
   <div class="container">
     <div>
       <h1 class="title">
-        Member
+        Menus
       </h1>
     </div>
     <div>
       <div
-        v-for="member in this.$store.state.MemberList.members"
-        :key="member.name"
+        v-for="menu in this.$store.state.MenuList.menus"
+        :key="menu.name"
       >
-        <p>{{ member.name }}</p>
-        <p>{{ member.description }}</p>
+        <p>{{ menu.name }}</p>
+        <p>¥ {{ menu.price }}</p>
+        <p>{{ menu.count }} 個</p>
+        <button
+          @click="addToCart(menu.name)"
+          class="button--green"
+        >
+          +
+        </button>
+        <button
+          @click="removeFromCart(menu.name)"
+          :disabled="menu.count < 1"
+          class="button--green"
+        >
+          -
+        </button>
+      </div>
+      <div>
+        <nuxt-link
+          to="/order"
+        >
+          注文する
+        </nuxt-link>
       </div>
     </div>
   </div>
@@ -23,7 +44,15 @@ import Vue from "vue"
 export default Vue.extend({
   head() {
     return {
-      title: "Members"
+      title: "Menus"
+    }
+  },
+  methods: {
+    addToCart(name: string) {
+      this.$store.dispatch("MenuList/addToCart", name)
+    },
+    removeFromCart(name: string) {
+      this.$store.dispatch("MenuList/removeFromCart", name)
     }
   }
 })

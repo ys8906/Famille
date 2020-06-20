@@ -24,5 +24,5 @@ export const state = () => ({
       name: "Rikako Natsumi",
       description: "Cool"
     }
-  ] as object,
+  ]
 })

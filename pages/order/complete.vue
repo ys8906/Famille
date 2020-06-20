@@ -2,20 +2,36 @@
   <div class="container">
     <div>
       <h1 class="title">
-        Famille
+        Complete
       </h1>
+    </div>
+    <div>
+      注文が完了いたしました。
+    </div>
+    <div>
+      <div
+        v-for="item in this.$store.getters['MenuList/selectedItems']"
+        :key="item.name"
+      >
+        <p>{{ item.name }}</p>
+        <p>{{ item.count }} 個</p>
+        <p>合計: ¥ {{ item.price * item.count }}</p>
+      </div>
     </div>
   </div>
 </template>
 
 <script lang="ts">
-import Vue from 'vue'
+import Vue from "vue"
 
 export default Vue.extend({
-  data() {
+  head() {
     return {
-      default: "top page"
+      title: "Complete"
     }
+  },
+  methods: {
+
   },
 })
 </script>
