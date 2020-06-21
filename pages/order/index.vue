@@ -13,19 +13,81 @@
         </label>
         <input
           v-model="name"
+          :class="{ 'invalid': validations.name }"
           type="text"
           id="name"
         >
       </div>
       <div>
-        <label for="address">
-          ご住所
+        <label for="email">
+          メールアドレス
         </label>
         <input
-          v-model="address"
+          v-model="email"
+          :class="{ 'invalid': validations.email }"
           type="text"
-          id="address"
+          id="email"
         >
+      </div>
+      <div>
+        <label for="order-date">
+          ご希望の受け取り日時
+        </label>
+        <select
+          v-model="orderDate.month"
+          :class="{ 'invalid': validations.orderDate.month }"
+          name="order-date-month"
+          id="order-date-month"
+        >
+          <option
+            v-for="n in 12"
+            :value="n"
+            :key="n"
+          >
+            {{ n }}
+          </option>
+        </select>
+        月
+        <select
+          v-model="orderDate.date"
+          :class="{ 'invalid': validations.orderDate.date }"
+          name="order-date-date"
+          id="order-date-date"
+        >
+          <option
+            v-for="n in today.maxDate"
+            :value="n"
+            :key="n"
+          >
+            {{ n }}
+          </option>
+        </select>
+        日
+        <select
+          v-model="orderDate.hour"
+          :class="{ 'invalid': validations.orderDate.hour }"
+          name="order-date-date"
+          id="order-date-date"
+        >
+          <option
+            v-for="n in 11"
+            :value="n + 9"
+            :key="n"
+          >
+            {{ n + 9 }}
+          </option>
+        </select>
+        :
+        <select
+          v-model="orderDate.minute"
+          :class="{ 'invalid': validations.orderDate.minute }"
+          name="order-date-date"
+          id="order-date-date"
+        >
+          <option value="0">00</option>
+          <option value="15">15</option>
+          <option value="30">30</option>
+        </select>
       </div>
       <div>
         <label for="payment-method">
@@ -33,6 +95,7 @@
         </label>
         <select
           v-model="paymentMethod"
+          :class="{ 'invalid': validations.paymentMethod }"
           name="payment-method"
           id="payment-method"
         >
@@ -45,14 +108,73 @@
         </select>
       </div>
       <div v-if="paymentMethod == 'online'">
-        <label for="payment-method">
-          カード番号
-        </label>
-        <input
-          v-model="cardNumber"
-          type="number"
-          id="cardNumber"
-        >
+        <div>
+          <label for="card-number-first">
+            カード番号
+            <input
+              v-model="cardNumber.first"
+              :class="{ 'invalid': validations.cardNumber.first }"
+              type="number"
+              id="card-number-first"
+              max-length="4"
+            >
+            -
+            <input
+              v-model="cardNumber.second"
+              :class="{ 'invalid': validations.cardNumber.second }"
+              type="number"
+              max-length="4"
+            >
+            -
+            <input
+              v-model="cardNumber.third"
+              :class="{ 'invalid': validations.cardNumber.third }"
+              type="number"
+              max-length="4"
+            >
+            -
+            <input
+              v-model="cardNumber.fourth"
+              :class="{ 'invalid': validations.cardNumber.fourth }"
+              type="number"
+              max-length="4"
+            >
+          </label>
+        </div>
+        <div>
+          <label for="card-expiry-month">
+            有効期限
+            <select
+              v-model="cardExpiry.month"
+              :class="{ 'invalid': validations.cardExpiry.month }"
+              name="card-expiry-month"
+              id="card-expiry-month"
+            >
+              <option
+                v-for="n in 12"
+                :value="n"
+                :key="n"
+              >
+                {{ n }}
+              </option>
+            </select>
+            /
+            <select
+              v-model="cardExpiry.year"
+              :class="{ 'invalid': validations.cardExpiry.year }"
+              name="card-expiry-year"
+              id="card-expiry-year"
+            >
+              <option
+                v-for="n in 10"
+                :value="n + today.year"
+                :key="n"
+              >
+                {{ n + today.year }}
+              </option>
+            </select>
+          </label>
+        </div>
       </div>
     </div>
     <div>
@@ -66,8 +188,7 @@
       </div>
     </div>
     <button
-      @click="showOrderModal = true"
-      :disabled="!name || !address"
+      @click="confirmForms"
       class="button--green"
     >
       注文する
@@ -94,16 +215,81 @@ export default Vue.extend({
   },
   data() {
     return {
+      today: {
+        year: parseInt((new Date).getFullYear().toString().substr(-2)),
+        month: ((new Date).getMonth() + 1),
+        maxDate: 31
+      },
       name: "",
-      address: "",
+      email: "",
+      orderDate: {
+        month: ((new Date).getMonth() + 1),
+        date: (new Date).getDate(),
+        hour: null,
+        minute: null,
+      },
       paymentMethod: "online",
-      cardNumber: "",
+      cardNumber: {
+        first: null,
+        second: null,
+        third: null,
+        fourth: null,
+      },
+      cardExpiry: {
+        month: null,
+        year: null,
+      },
       showOrderModal: false,
-      inputValidation: false
+      validations: {
+        name: false,
+        email: false,
+        orderDate: false,
+        paymentMethod: false,
+        cardNumber: {
+          first: false,
+          second: false,
+          third: false,
+          fourth: false,
+        },
+        cardExpiry: {
+          month: false,
+          year: false,
+        },
+      },
     }
   },
   methods: {
-
+    confirmForms(e: Event) {
+      let error = 0
+      if (!this.name)                 { this.validations.name = true, error += 1 };
+      if (!this.email)                { this.validations.email = true, error += 1 };
+      if (!this.orderDate)            { this.validations.orderDate = true, error += 1 };
+      if (this.paymentMethod == "online") {
+        if (!this.cardNumber.first)   { this.validations.cardNumber.first = true, error += 1 };
+        if (!this.cardNumber.second)  { this.validations.cardNumber.second = true, error += 1 };
+        if (!this.cardNumber.third)   { this.validations.cardNumber.third = true, error += 1 };
+        if (!this.cardNumber.fourth)  { this.validations.cardNumber.fourth = true, error += 1 };
+        if (!this.cardExpiry.month)   { this.validations.cardExpiry.month = true, error += 1 };
+        if (!this.cardExpiry.year)    { this.validations.cardExpiry.year = true, error += 1 };
+      };
+      if (error > 0) {
+        e.preventDefault();
+        window.alert("error");
+      } else {
+        this.showOrderModal = true;
+      }
+    }
+  },
+  watch: {
+    "today.month"() {
+      if ([2].includes(this.today.month)) {
+        this.today.maxDate = 28
+      } else if ([4, 6, 9, 11].includes(this.today.month)) {
+        this.today.maxDate = 30
+      } else {
+        this.today.maxDate = 31
+      };
+    }
   },
 })
 </script>

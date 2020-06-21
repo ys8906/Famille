@@ -27,7 +27,9 @@
           -
         </button>
       </div>
-      <div>
+      <div
+        v-if="this.$store.getters['MenuList/selectedItems'].length"
+      >
         <nuxt-link
           to="/order"
         >
