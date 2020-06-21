@@ -7,7 +7,7 @@
     </div>
     <div>
       <div
-        v-for="member in this.$store.state.MemberList.members"
+        v-for="member in members"
         :key="member.name"
       >
         <p>{{ member.name }}</p>
@@ -25,7 +25,37 @@ export default Vue.extend({
     return {
       title: "Members"
     }
-  }
+  },
+  data() {
+    return {
+      members: [
+        {
+          name: "Yui Kazami",
+          description: "Cute"
+        },
+        {
+          name: "Leah Katori",
+          description: "Angel"
+        },
+        {
+          name: "Yukino Asuka",
+          description: "Adorable"
+        },
+        {
+          name: "Kasuri Suzunami",
+          description: "Pop"
+        },
+        {
+          name: "Ema Sugisawa",
+          description: "Charming"
+        },
+        {
+          name: "Rikako Natsumi",
+          description: "Cool"
+        }
+      ]
+    }
+  },
 })
 </script>
 

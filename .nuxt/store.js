@@ -17,7 +17,6 @@ let store = {};
   // Enforce store modules
   store.modules = store.modules || {}
 
-  resolveStoreModules(require('../store/MemberList.js'), 'MemberList.js')
   resolveStoreModules(require('../store/MenuList.js'), 'MenuList.js')
 
   // If the environment supports hot reloading...
@@ -25,7 +24,6 @@ let store = {};
   if (process.client && module.hot) {
     // Whenever any Vuex module is updated...
     module.hot.accept([
-      '../store/MemberList.js',
       '../store/MenuList.js',
     ], () => {
       // Update `root.modules` with the latest definitions.
