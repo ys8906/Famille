@@ -30,8 +30,8 @@ export default Vue.extend({
       title: "Complete"
     }
   },
-  methods: {
-
+  mounted() {
+    this.$store.dispatch("MenuList/initializeCart")
   },
 })
 </script>

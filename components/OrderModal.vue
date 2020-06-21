@@ -27,10 +27,5 @@ export default {
   components: {
     Modal
   },
-  data() {
-    return {
-      isCorrect: null,    
-    };
-  },
 };
 </script>

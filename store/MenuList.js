@@ -1,19 +1,3 @@
-// import MenuModel from "models/MenuModel"
-
-// interface MenuModel {
-//   name: string;
-//   price: number;
-//   count: number;
-// }
-
-// interface MenuListModel {
-//   menus: Array<{
-//     name: string;
-//     price: number;
-//     count: number;
-//   }>
-// }
-
 // 後ほど原作準拠にする
 export const state = () => ({
   menus: [
@@ -60,6 +44,11 @@ export const mutations = {
     const menu = state.menus.find(el => el.name == name);
     menu.count--;
   },
+  initialize(state) {
+    state.menus.forEach(item => {
+      item.count = 0;
+    });
+  }
 }
 
 export const actions = {
@@ -69,4 +58,7 @@ export const actions = {
   removeFromCart({commit}, name) {
     commit("decrement", name);
   },
+  initializeCart({commit}) {
+    commit("initialize")
+  }
 }
