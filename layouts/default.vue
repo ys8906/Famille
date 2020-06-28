@@ -1,6 +1,8 @@
 <template>
-  <div>
-    <Header />
+  <div class="m-20" ontouchstart="">
+    <Header
+      v-if="$route.name !== 'index'"
+    />
     <main>
       <nuxt />
     </main>

@@ -8,6 +8,7 @@ import NuxtBuildIndicator from './components/nuxt-build-indicator'
 import '../assets/css/tailwind.css'
 
 import '../assets/scss/common.scss'
+import '../assets/scss/index.scss'
 
 import '../node_modules/prismjs/themes/prism.css'
 

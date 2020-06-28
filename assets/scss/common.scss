@@ -1,6 +1,29 @@
 // Settings
-$brand: #A7845E;
+$dark-brown: #A7845E;
+$pale-brown: #EEE4B7;
+$dark-green: #1F7417;
+$pale-green: #ABDBA1;
+$danger: #800;
 
-body {
-  background-color: $brand;
+html {
+  background-color: $pale-brown;
+  cursor: url("~@/assets/images/cursor.svg"), auto;
+}
+
+.menu-btn {
+  cursor: url("~@/assets/images/cursor.svg"), auto;
+  width: 200px;
+  padding: 8px 24px;
+  border-radius: 16px;
+  border-right: 5px ridge #EEE4B7;
+  border-left: 5px groove #EEE4B7;
+  background-color: #1F7417;
+  text-align: center;
+  font-size: 24px;
+  color: #ABDBA1;
+  font-weight: bold;
+  &:hover {
+    background-color: #89f64e;
+    color: #fff;
+  }
 }
