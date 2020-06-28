@@ -1,0 +1,7 @@
+@import "common.scss";
+
+.person-box {
+  &:hover {
+    opacity: 0.5;
+  }
+}

@@ -1,5 +1,5 @@
 <template>
-  <div class="m-20" ontouchstart="">
+  <div class="mx-20 my-5" ontouchstart="">
     <Header
       v-if="$route.name !== 'index'"
     />

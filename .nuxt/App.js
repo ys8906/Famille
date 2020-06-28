@@ -7,8 +7,10 @@ import NuxtBuildIndicator from './components/nuxt-build-indicator'
 
 import '../assets/css/tailwind.css'
 
+// [OPTIMIZE] loopで回した方が良さげ
 import '../assets/scss/common.scss'
 import '../assets/scss/index.scss'
+import '../assets/scss/members.scss'
 
 import '../node_modules/prismjs/themes/prism.css'
 

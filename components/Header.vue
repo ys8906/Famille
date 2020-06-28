@@ -1,30 +1,30 @@
 <template>
-  <div class="links">
+  <nav class="flex justify-around mb-8">
     <nuxt-link
       to="/"
-      class="button--grey"
+      class="menu-btn mx-2"
     >
       Top
     </nuxt-link>
     <nuxt-link
       to="/menus"
-      class="button--grey"
+      class="menu-btn mx-2"
     >
       Menus
     </nuxt-link>
     <nuxt-link
       to="/check"
-      class="button--grey"
+      class="menu-btn mx-2"
     >
       Check
     </nuxt-link>
     <nuxt-link
       to="/members"
-      class="button--grey"
+      class="menu-btn mx-2"
     >
       Members
     </nuxt-link>
-  </div>
+  </nav>
 </template>
 
 <script lang="ts">

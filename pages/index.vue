@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container index">
     <div class="bg-wrapper">
       <img
         src="../assets/images/index/background.svg"
