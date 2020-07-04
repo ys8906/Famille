@@ -4,24 +4,30 @@
       <div
         v-for="category in this.$store.getters['MenuList/categories']"
         :key="category.id"
-        class="m-4"
+        class="m-2"
       >
-        <button class="category-button">{{ category.name }}</button>
+        <button
+          @click="selectedCategory = category.name"
+          :class="{'selected':(selectedCategory == category.name)}"
+          class="category-button"
+        >
+          {{ category.name }}
+        </button>
       </div>
     </div>
-    <div class="menu-wrapper flex flex-wrap justify-around">
+    <div class="menu-wrapper flex flex-wrap justify-around mt-4">
       <div
-        v-for="item in this.$store.getters['MenuList/categoryItems']('cake')"
+        v-for="item in this.$store.getters['MenuList/categoryItems'](selectedCategory)"
         :key="item.name"
         class="flex"
       >
-        <div class="m-8 menu-wrapper items-center text-center">
-          <img :src="item.src" :alt="item.name" class="menu-img h-40">
+        <div class="mx-8 my-4 menu-wrapper items-center text-center">
+          <img :src="item.src" :alt="item.name" class="menu-img h-32">
           <div>
-            <div class="mb-2 text-xl font-bold">{{ item.name }}</div>
+            <div class="text-xl font-bold">{{ item.name }}</div>
             <div class="flex justify-center">
-              <div class="px-4 py-2">¥ {{ item.price }}</div>
-              <div class="px-4 py-2">{{ item.count }} 個</div>
+              <div class="mx-4 mb-2">¥ {{ item.price }}</div>
+              <div class="mx-4 mb-2">{{ item.count }} 個</div>
             </div>
             <div>
               <button
@@ -52,6 +58,11 @@ export default Vue.extend({
   head() {
     return {
       title: "items"
+    }
+  },
+  data() {
+    return {
+      selectedCategory: "Drink"
     }
   },
   methods: {
