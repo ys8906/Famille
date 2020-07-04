@@ -1,0 +1,19 @@
+@import "common";
+
+.menu-img {
+  min-width: 200px;
+}
+
+.category-button {
+  width: 100px;
+  padding: 8px 24px;
+  border-radius: 16px;
+  background-color: $dark-brown;
+  text-align: center;
+  font-size: 16px;
+  color: #fff;
+  font-weight: bold;
+  &:hover {
+    opacity: 0.7;
+  }
+}

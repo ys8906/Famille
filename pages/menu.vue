@@ -1,40 +1,45 @@
 <template>
-  <div class="container">
-    <div>
-      <h1 class="title">
-        item
-      </h1>
-    </div>
-    <div>
+  <div class="container menu">
+    <div class="category-wrapper flex justify-center">
       <div
-        v-for="item in this.$store.state.MenuList.items"
-        :key="item.name"
+        v-for="category in this.$store.getters['MenuList/categories']"
+        :key="category.id"
+        class="m-4"
       >
-        <p>{{ item.name }}</p>
-        <p>¥ {{ item.price }}</p>
-        <p>{{ item.count }} 個</p>
-        <button
-          @click="addToCart(item.name)"
-          class="button--green"
-        >
-          +
-        </button>
-        <button
-          @click="removeFromCart(item.name)"
-          :disabled="item.count < 1"
-          class="button--green"
-        >
-          -
-        </button>
+        <button class="category-button">{{ category.name }}</button>
       </div>
+    </div>
+    <div class="menu-wrapper flex flex-wrap justify-around">
       <div
-        v-if="this.$store.getters['MenuList/selectedItems'].length"
+        v-for="item in this.$store.getters['MenuList/categoryItems']('cake')"
+        :key="item.name"
+        class="flex"
       >
-        <nuxt-link
-          to="/order"
-        >
-          注文する
-        </nuxt-link>
+        <div class="m-8 menu-wrapper items-center text-center">
+          <img :src="item.src" :alt="item.name" class="menu-img h-40">
+          <div>
+            <div class="mb-2 text-xl font-bold">{{ item.name }}</div>
+            <div class="flex justify-center">
+              <div class="px-4 py-2">¥ {{ item.price }}</div>
+              <div class="px-4 py-2">{{ item.count }} 個</div>
+            </div>
+            <div>
+              <button
+                @click="addToCart(item.name)"
+                class="button--green"
+              >
+                +
+              </button>
+              <button
+                @click="removeFromCart(item.name)"
+                :disabled="item.count < 1"
+                class="button--green"
+              >
+                -
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -59,3 +64,7 @@ export default Vue.extend({
   }
 })
 </script>
+
+<style lang="scss" scoped>
+@import "@/assets/scss/menu.scss";
+</style>

@@ -25,13 +25,13 @@ a, button {
   border-right: 5px ridge #EEE4B7;
   border-left: 5px groove #EEE4B7;
   filter: drop-shadow(0 10px 5px rgba(0, 0, 0, 0.4));
-  background-color: #1F7417;
+  background-color: $dark-green;
   text-align: center;
   font-size: 24px;
   color: #ABDBA1;
   font-weight: bold;
   &:hover {
-    background-color: #89f64e;
+    background-color: $pale-green;
     color: #fff;
   }
 }
