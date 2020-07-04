@@ -32,12 +32,14 @@
         </div>
       </div>
     </div>
-    <PortraitModal
-      v-if="showPortraitModal"
-      @close="showPortraitModal = false"
-      :src="showPortraitSrc"
-      :name="showPortraitName"
-    />
+    <transition name="fade">
+      <PortraitModal
+        v-if="showPortraitModal"
+        @close="showPortraitModal = false"
+        :src="showPortraitSrc"
+        :name="showPortraitName"
+      />
+    </transition>
   </div>
 </template>
 

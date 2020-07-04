@@ -10,7 +10,7 @@ html {
   cursor: url("~@/assets/images/system/cursor.svg"), auto;
 }
 
-button {
+a, button {
   cursor: url("~@/assets/images/system/cursor.svg"), auto;
   transition-duration: 0.3s;
   &:hover {
