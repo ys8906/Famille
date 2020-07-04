@@ -7,8 +7,8 @@
       <nuxt-link to="/menu" class="menu-btn mx-2">
         Menu
       </nuxt-link>
-      <nuxt-link to="/check" class="menu-btn mx-2">
-        Check
+      <nuxt-link to="/order" class="menu-btn mx-2">
+        Order
       </nuxt-link>
       <nuxt-link to="/members" class="menu-btn mx-2">
         Members
@@ -40,10 +40,10 @@
             Menu
           </nuxt-link>
           <nuxt-link
-            to="/check"
+            to="/order"
             class="menu-btn mx-2 mt-2 mb-8"
           >
-            Check
+            Order
           </nuxt-link>
           <nuxt-link
             to="/members"

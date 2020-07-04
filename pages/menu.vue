@@ -57,7 +57,7 @@ import Vue from "vue"
 export default Vue.extend({
   head() {
     return {
-      title: "items"
+      title: "Items | Café de Famille"
     }
   },
   data() {

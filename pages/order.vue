@@ -62,7 +62,7 @@ export default Vue.extend({
   },
   head() {
     return {
-      title: "Check"
+      title: "Order | Café de Famille"
     }
   },
   data() {
@@ -82,5 +82,5 @@ export default Vue.extend({
 </script>
 
 <style lang="scss" scoped>
-@import "@/assets/scss/check.scss";
+@import "@/assets/scss/order.scss";
 </style>

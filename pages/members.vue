@@ -53,7 +53,7 @@ export default Vue.extend({
   },
   head() {
     return {
-      title: "Members"
+      title: "Members | Café de Famille"
     }
   },
   data() {

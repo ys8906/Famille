@@ -3,11 +3,9 @@ import Router from 'vue-router'
 import { interopDefault } from './utils'
 import scrollBehavior from './router.scrollBehavior.js'
 
-const _5550dd88 = () => interopDefault(import('../pages/check.vue' /* webpackChunkName: "pages/check" */))
 const _42670dcd = () => interopDefault(import('../pages/members.vue' /* webpackChunkName: "pages/members" */))
 const _5def1f5b = () => interopDefault(import('../pages/menu.vue' /* webpackChunkName: "pages/menu" */))
-const _557d3d85 = () => interopDefault(import('../pages/order/index.vue' /* webpackChunkName: "pages/order/index" */))
-const _5020ea56 = () => interopDefault(import('../pages/order/complete.vue' /* webpackChunkName: "pages/order/complete" */))
+const _b382befc = () => interopDefault(import('../pages/order.vue' /* webpackChunkName: "pages/order" */))
 const _e5183ff4 = () => interopDefault(import('../pages/index.vue' /* webpackChunkName: "pages/index" */))
 
 // TODO: remove in Nuxt 3
@@ -27,10 +25,6 @@ export const routerOptions = {
   scrollBehavior,
 
   routes: [{
-    path: "/check",
-    component: _5550dd88,
-    name: "check"
-  }, {
     path: "/members",
     component: _42670dcd,
     name: "members"
@@ -40,12 +34,8 @@ export const routerOptions = {
     name: "menu"
   }, {
     path: "/order",
-    component: _557d3d85,
+    component: _b382befc,
     name: "order"
-  }, {
-    path: "/order/complete",
-    component: _5020ea56,
-    name: "order-complete"
   }, {
     path: "/",
     component: _e5183ff4,
