@@ -12,7 +12,7 @@
         famille
       </h1>
       <nuxt-link
-        to="/menus"
+        to="/menu"
         class="menu-btn mb-8"
       >
         MENU

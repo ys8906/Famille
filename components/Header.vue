@@ -7,10 +7,10 @@
       Top
     </nuxt-link>
     <nuxt-link
-      to="/menus"
+      to="/menu"
       class="menu-btn mx-2"
     >
-      Menus
+      Menu
     </nuxt-link>
     <nuxt-link
       to="/check"

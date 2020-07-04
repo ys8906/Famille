@@ -3,12 +3,12 @@ import Router from 'vue-router'
 import { interopDefault } from './utils'
 import scrollBehavior from './router.scrollBehavior.js'
 
-const _8d18bb9e = () => interopDefault(import('../pages/check.vue' /* webpackChunkName: "pages/check" */))
-const _e07a94fc = () => interopDefault(import('../pages/members.vue' /* webpackChunkName: "pages/members" */))
-const _47bc7e1d = () => interopDefault(import('../pages/menus.vue' /* webpackChunkName: "pages/menus" */))
-const _8eb7fa8c = () => interopDefault(import('../pages/order/index.vue' /* webpackChunkName: "pages/order/index" */))
-const _a63fc5fe = () => interopDefault(import('../pages/order/complete.vue' /* webpackChunkName: "pages/order/complete" */))
-const _718ff0fb = () => interopDefault(import('../pages/index.vue' /* webpackChunkName: "pages/index" */))
+const _5550dd88 = () => interopDefault(import('../pages/check.vue' /* webpackChunkName: "pages/check" */))
+const _42670dcd = () => interopDefault(import('../pages/members.vue' /* webpackChunkName: "pages/members" */))
+const _5def1f5b = () => interopDefault(import('../pages/menu.vue' /* webpackChunkName: "pages/menu" */))
+const _557d3d85 = () => interopDefault(import('../pages/order/index.vue' /* webpackChunkName: "pages/order/index" */))
+const _5020ea56 = () => interopDefault(import('../pages/order/complete.vue' /* webpackChunkName: "pages/order/complete" */))
+const _e5183ff4 = () => interopDefault(import('../pages/index.vue' /* webpackChunkName: "pages/index" */))
 
 // TODO: remove in Nuxt 3
 const emptyFn = () => {}
@@ -28,27 +28,27 @@ export const routerOptions = {
 
   routes: [{
     path: "/check",
-    component: _8d18bb9e,
+    component: _5550dd88,
     name: "check"
   }, {
     path: "/members",
-    component: _e07a94fc,
+    component: _42670dcd,
     name: "members"
   }, {
-    path: "/menus",
-    component: _47bc7e1d,
-    name: "menus"
+    path: "/menu",
+    component: _5def1f5b,
+    name: "menu"
   }, {
     path: "/order",
-    component: _8eb7fa8c,
+    component: _557d3d85,
     name: "order"
   }, {
     path: "/order/complete",
-    component: _a63fc5fe,
+    component: _5020ea56,
     name: "order-complete"
   }, {
     path: "/",
-    component: _718ff0fb,
+    component: _e5183ff4,
     name: "index"
   }],
 

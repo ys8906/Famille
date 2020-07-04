@@ -1,6 +1,6 @@
 // 後ほど原作準拠にする
 export const state = () => ({
-  menus: [
+  items: [
     {
       name: "チーズケーキ",
       price: 300,
@@ -31,21 +31,21 @@ export const state = () => ({
 
 export const getters = {
   selectedItems(state) {
-    return state.menus.filter(menu => menu.count > 0)
+    return state.items.filter(item => item.count > 0)
   }
 }
 
 export const mutations = {
   increment(state, name) {
-    const menu = state.menus.find(el => el.name == name);
-    menu.count++;
+    const item = state.items.find(el => el.name == name);
+    item.count++;
   },
   decrement(state, name) {
-    const menu = state.menus.find(el => el.name == name);
-    menu.count--;
+    const item = state.items.find(el => el.name == name);
+    item.count--;
   },
   initialize(state) {
-    state.menus.forEach(item => {
+    state.items.forEach(item => {
       item.count = 0;
     });
   }

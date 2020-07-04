@@ -2,43 +2,43 @@
   {
     "name": "check",
     "path": "/check",
-    "component": "/Users/yoshitosato/programming/Famille/pages/check.vue",
+    "component": "/Users/yoshitosato/src/Famille/pages/check.vue",
     "chunkName": "pages/check",
-    "_name": "_8d18bb9e"
+    "_name": "_5550dd88"
   },
   {
     "name": "members",
     "path": "/members",
-    "component": "/Users/yoshitosato/programming/Famille/pages/members.vue",
+    "component": "/Users/yoshitosato/src/Famille/pages/members.vue",
     "chunkName": "pages/members",
-    "_name": "_e07a94fc"
+    "_name": "_42670dcd"
   },
   {
-    "name": "menus",
-    "path": "/menus",
-    "component": "/Users/yoshitosato/programming/Famille/pages/menus.vue",
-    "chunkName": "pages/menus",
-    "_name": "_47bc7e1d"
+    "name": "menu",
+    "path": "/menu",
+    "component": "/Users/yoshitosato/src/Famille/pages/menu.vue",
+    "chunkName": "pages/menu",
+    "_name": "_5def1f5b"
   },
   {
     "name": "order",
     "path": "/order",
-    "component": "/Users/yoshitosato/programming/Famille/pages/order/index.vue",
+    "component": "/Users/yoshitosato/src/Famille/pages/order/index.vue",
     "chunkName": "pages/order/index",
-    "_name": "_8eb7fa8c"
+    "_name": "_557d3d85"
   },
   {
     "name": "order-complete",
     "path": "/order/complete",
-    "component": "/Users/yoshitosato/programming/Famille/pages/order/complete.vue",
+    "component": "/Users/yoshitosato/src/Famille/pages/order/complete.vue",
     "chunkName": "pages/order/complete",
-    "_name": "_a63fc5fe"
+    "_name": "_5020ea56"
   },
   {
     "name": "index",
     "path": "/",
-    "component": "/Users/yoshitosato/programming/Famille/pages/index.vue",
+    "component": "/Users/yoshitosato/src/Famille/pages/index.vue",
     "chunkName": "pages/index",
-    "_name": "_718ff0fb"
+    "_name": "_e5183ff4"
   }
 ]

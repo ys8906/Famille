@@ -2,26 +2,26 @@
   <div class="container">
     <div>
       <h1 class="title">
-        Menus
+        item
       </h1>
     </div>
     <div>
       <div
-        v-for="menu in this.$store.state.MenuList.menus"
-        :key="menu.name"
+        v-for="item in this.$store.state.MenuList.items"
+        :key="item.name"
       >
-        <p>{{ menu.name }}</p>
-        <p>¥ {{ menu.price }}</p>
-        <p>{{ menu.count }} 個</p>
+        <p>{{ item.name }}</p>
+        <p>¥ {{ item.price }}</p>
+        <p>{{ item.count }} 個</p>
         <button
-          @click="addToCart(menu.name)"
+          @click="addToCart(item.name)"
           class="button--green"
         >
           +
         </button>
         <button
-          @click="removeFromCart(menu.name)"
-          :disabled="menu.count < 1"
+          @click="removeFromCart(item.name)"
+          :disabled="item.count < 1"
           class="button--green"
         >
           -
@@ -46,7 +46,7 @@ import Vue from "vue"
 export default Vue.extend({
   head() {
     return {
-      title: "Menus"
+      title: "items"
     }
   },
   methods: {
