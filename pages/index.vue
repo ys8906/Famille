@@ -8,7 +8,7 @@
       >
     </div>
     <div class="menu-wrapper flex flex-col items-center">
-      <h1 class="mb-8 text-6xl">
+      <h1 class="title mb-8 text-6xl">
         famille
       </h1>
       <nuxt-link
@@ -44,3 +44,7 @@ export default Vue.extend({
   },
 })
 </script>
+
+<style lang="scss" scoped>
+@import "@/assets/scss/index.scss";
+</style>

@@ -12,7 +12,10 @@
             class="modal__container--close"
             @click="$emit('close')"
           >
-            <i class="fas fa-times" />
+            <img
+              src="@/assets/images/system/times.svg"
+              alt="close-button"
+            >
           </button>
 
           <div class="modal__header">

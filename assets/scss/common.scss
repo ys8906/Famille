@@ -7,11 +7,18 @@ $danger: #800;
 
 html {
   background-color: $pale-brown;
-  cursor: url("~@/assets/images/cursor.svg"), auto;
+  cursor: url("~@/assets/images/system/cursor.svg"), auto;
+}
+
+button {
+  cursor: url("~@/assets/images/system/cursor.svg"), auto;
+  transition-duration: 0.3s;
+  &:hover {
+    opacity: 0.8;
+  }
 }
 
 .menu-btn {
-  cursor: url("~@/assets/images/cursor.svg"), auto;
   width: 200px;
   padding: 8px 24px;
   border-radius: 16px;

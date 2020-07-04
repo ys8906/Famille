@@ -1,8 +1,15 @@
 <template>
   <Modal
-    @close="showPortraitModal = false"
-  >    
-    <img :portraitSrc="portraitSrc" :alt="name">
+    @close="$emit('close')"
+  >
+    <div slot="modal__header" />
+    <div slot="modal__body">
+      <img
+        :src="src"
+        :alt="name"
+        class="portrait"
+      >
+    </div>
   </Modal>
 </template>
 
@@ -14,7 +21,7 @@ export default {
     Modal
   },
   props: {
-    portraitSrc: {
+    src: {
       type: String,
       default: null
     },
@@ -25,3 +32,9 @@ export default {
   }
 };
 </script>
+
+<style lang="scss" scoped>
+.portrait {
+  border-radius: 16px;
+}
+</style>
