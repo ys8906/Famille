@@ -40,6 +40,9 @@ a, button {
     border-radius: 16px;
   }
   .drawer-btn {
+    position: absolute;
+    right: 10px;
+    top: 13px;
     background-color: $dark-green;
     border: 5px ridge $pale-brown;
     width: 35px;
@@ -48,6 +51,10 @@ a, button {
     &:hover {
       background-color: $pale-green;
     }
+  }
+  .title {
+    text-transform: capitalize;
+    color: $dark-green;
   }
 }
 .sp-navigation {
@@ -75,6 +82,10 @@ a, button {
     background-color: $pale-green;
     color: #fff;
   }
+}
+.nuxt-link-exact-active {
+  background-color: $pale-green;
+  color: #fff;
 }
 
 .button--green {

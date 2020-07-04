@@ -14,26 +14,41 @@
         Members
       </nuxt-link>
     </nav>
-    <nav class="header-sp px-5 py-2 mt-5 mb-8 text-right">
-      <button
-        @click="active = !active"
-        class="drawer-btn"
-      />
+    <nav class="header-sp px-5 py-2 mt-5 mb-8">
+      <div class="flex justify-center">
+        <div class="title text-3xl font-bold">{{ $nuxt.$route.name }}</div>
+        <button
+          @click="active = !active"
+          class="drawer-btn"
+        />
+      </div>
       <transition name="sp-navigation">
         <div
           v-if="active"
-          class="flex flex-col items-center"
+          class="flex flex-col items-center mt-3"
         >
-          <nuxt-link to="/" class="menu-btn mx-2 mt-2 mb-8">
+          <nuxt-link
+            to="/"
+            class="menu-btn mx-2 mt-2 mb-8"
+          >
             Top
           </nuxt-link>
-          <nuxt-link to="/menu" class="menu-btn mx-2 mt-2 mb-8">
+          <nuxt-link
+            to="/menu"
+            class="menu-btn mx-2 mt-2 mb-8"
+          >
             Menu
           </nuxt-link>
-          <nuxt-link to="/check" class="menu-btn mx-2 mt-2 mb-8">
+          <nuxt-link
+            to="/check"
+            class="menu-btn mx-2 mt-2 mb-8"
+          >
             Check
           </nuxt-link>
-          <nuxt-link to="/members" class="menu-btn mx-2 mt-2 mb-8">
+          <nuxt-link
+            to="/members"
+            class="menu-btn mx-2 mt-2 mb-8"
+          >
             Members
           </nuxt-link>
         </div>
@@ -50,6 +65,9 @@ export default Vue.extend({
     return {
       active: false,
     }
+  },
+  mounted() {
+    console.log(this.$route.name)
   },
 })
 </script>

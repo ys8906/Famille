@@ -145,6 +145,13 @@ export const getters = {
   selectedItems(state) {
     return state.items.filter(item => item.count > 0)
   },
+  totalPrice(state) {
+    let sum = 0
+    state.items.forEach((item) => {
+      sum += (item.price * item.count)
+    })
+    return sum
+  },
   categoryItems: (state) => (category) => {
     return state.items.filter(item => item.category == category)
   },
