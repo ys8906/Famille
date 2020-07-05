@@ -1,8 +1,9 @@
 # Famille
 
-## 検討事項
-- Vuexにtsを適用するかどうか
-  - 著しく相性が悪いっぽいので、一時見送り
+## 概要
+create-nuxt-app
+https://famille-kxfwrqdvc.vercel.app/
+https://user-images.githubusercontent.com/58162637/86535978-1545aa80-bf1f-11ea-8411-d1a90190d670.gif
 
 ## Build Setup
 
@@ -20,5 +21,3 @@ $ yarn start
 # generate static project
 $ yarn generate
 ```
-
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
