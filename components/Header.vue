@@ -66,9 +66,6 @@ export default Vue.extend({
       active: false,
     }
   },
-  mounted() {
-    console.log(this.$route.name)
-  },
 })
 </script>
 

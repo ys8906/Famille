@@ -27,6 +27,11 @@ label {
   cursor: url("~@/assets/images/system/cursor.svg"), auto;
 }
 
+input:focus, select:focus, button:focus {
+  opacity: 0.7;
+  outline: 0;
+}
+
 // Transitions
 .fade {
   &-enter-active, &-leave-active {
@@ -78,6 +83,10 @@ label {
   &-enter {
     opacity: 0;
   }
+}
+
+.container {
+  margin: auto;
 }
 
 .menu-btn {

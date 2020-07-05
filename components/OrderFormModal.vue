@@ -6,7 +6,7 @@
       ご注文情報
     </div>
     <div slot="modal__body" class="flex flex-col mx-8">
-      <div class="mb-6 text-left">
+      <div class="mb-5 text-left">
         <label class="font-bold" for="name">
           お名前
           <span v-if="validations.name" class="alert ml-2">
@@ -19,11 +19,12 @@
           v-model="name"
           :class="{ 'invalid': validations.name }"
           class="mt-2"
+          autocomplete="off"
           type="text"
           id="name"
         >
       </div>
-      <div class="mb-6 text-left">
+      <div class="mb-5 text-left">
         <label class="font-bold" for="email">
           メールアドレス
           <span v-if="validations.email" class="alert ml-2">
@@ -40,7 +41,7 @@
           id="email"
         >
       </div>
-      <div class="mb-6 text-left">
+      <div class="mb-5 text-left">
         <label class="font-bold" for="order-date">
           ご希望の受け取り日時
           <span v-if="validations.orderDate" class="alert ml-2">
@@ -110,7 +111,7 @@
           <option value="30">30</option>
         </select>
       </div>
-      <div class="mb-6 text-left">
+      <div class="mb-5 text-left">
         <label class="font-bold" for="payment-method">
           お支払い方法
         </label>
@@ -131,7 +132,7 @@
         </select>
       </div>
       <div v-if="paymentMethod == 'online'">
-        <div class="mb-6 text-left">
+        <div class="mb-5 text-left">
           <label class="font-bold" for="card-number-first">
             カード番号
             <span v-if="validations.cardNumber" class="alert ml-2">
@@ -174,10 +175,10 @@
             max-length="4"
           >
         </div>
-        <div class="mb-6 text-left">
+        <div class="mb-8 text-left">
           <label class="font-bold" for="card-expiry-month">
             カードの有効期限
-            <span v-if="validations.cardNumber" class="alert ml-2">
+            <span v-if="validations.cardExpiry" class="alert ml-2">
               <br class="hidden sp">
               カードの有効期限を入力してください
             </span>
@@ -217,21 +218,29 @@
         </div>
       </div>
       <button
-        @click="confirmForms"
+        @click="validateForms"
         class="order-btn button--green font-bold"
       >
         注文する
       </button>
+      <div class="confirm">
+        <ConfirmModal
+          v-if="showConfirmModal"
+          @close="showConfirmModal = false"
+        />
+      </div>
     </div>
   </Modal>
 </template>
 
 <script>
 import Modal from './Modal.vue';
+import ConfirmModal from '@/components/ConfirmModal';
 
 export default {
   components: {
-    Modal
+    Modal,
+    ConfirmModal,
   },
   data() {
     return {
@@ -267,7 +276,7 @@ export default {
         cardNumber: false,
         cardExpiry: false
       },
-      showOrderModal: false,
+      showConfirmModal: false,
     }
   },
   methods: {
@@ -278,7 +287,7 @@ export default {
       this.validations.cardNumber         = false
       this.validations.cardExpiry         = false
     },
-    confirmForms(e) {
+    validateForms(e) {
       let error = 0
       this.resetValidations()
       if (!this.name)                 { this.validations.name       = true, error += 1 };
@@ -296,8 +305,8 @@ export default {
       if (error > 0) {
         e.preventDefault();
       } else {
-        this.resetValidations()
-        this.showOrderModal = true;
+        this.resetValidations();
+        this.showConfirmModal = true;
       }
     }
   },

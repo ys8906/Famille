@@ -21,6 +21,13 @@
     "_name": "_557d3d85"
   },
   {
+    "name": "order-complete",
+    "path": "/order/complete",
+    "component": "/Users/yoshitosato/src/Famille/pages/order/complete.vue",
+    "chunkName": "pages/order/complete",
+    "_name": "_5020ea56"
+  },
+  {
     "name": "index",
     "path": "/",
     "component": "/Users/yoshitosato/src/Famille/pages/index.vue",

@@ -1,0 +1,19 @@
+@import "common";
+
+.confirm-btn {
+  display: inline-block;
+  width: 90px;
+  padding: 8px 12px;
+  border-radius: 16px;
+  border-right: 5px ridge $pale-brown;
+  border-left: 5px groove $pale-brown;
+  background-color: #29991f;
+  text-align: center;
+  font-size: 16px;
+  color: $pale-brown;
+  font-weight: bold;
+  &:hover {
+    background-color: $pale-green;
+    color: #fff;
+  }
+}

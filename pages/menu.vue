@@ -15,7 +15,7 @@
         </button>
       </div>
     </div>
-    <div class="menu-wrapper flex flex-wrap justify-around mt-4">
+    <div class="menu-wrapper flex flex-wrap justify-around mt-4 mb-20">
       <div
         v-for="item in this.$store.getters['MenuList/categoryItems'](selectedCategory)"
         :key="item.name"

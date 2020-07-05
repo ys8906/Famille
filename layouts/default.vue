@@ -1,7 +1,7 @@
 <template>
-  <div class="mx-20 mb-5">
+  <div>
     <Header
-      v-if="$route.name !== 'index'"
+      v-if="!noHeaderRoutes.some(r => r == $route.name)"
     />
     <main>
       <nuxt />
@@ -14,6 +14,14 @@
 	export default {
 		components: {
 			Header,
-		}
+    },
+    data() {
+      return {
+        noHeaderRoutes: [
+          "index",
+          "order-complete",
+        ]
+      }
+    },
 	};
 </script>
