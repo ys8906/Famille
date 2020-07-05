@@ -9,7 +9,7 @@
     width: 100vw;
     height: 100vh;
     background-color: $dark-brown;
-    animation: background-fadein 2s forwards linear;
+    animation: background-fadein 1.5s forwards linear;
     animation-delay: 2s;
     &__text {
       position: absolute;
@@ -41,6 +41,7 @@
     }
     100% {
       opacity: 0;
+      visibility: hidden;
     }
   }
 
