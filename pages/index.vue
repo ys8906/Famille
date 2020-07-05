@@ -1,5 +1,10 @@
 <template>
   <div class="container index">
+    <div class="landing">
+      <div class="landing__text">
+        Café de Famille
+      </div>
+    </div>
     <div class="bg-wrapper">
       <img
         src="../assets/images/index/background.svg"

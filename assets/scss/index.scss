@@ -1,6 +1,49 @@
 @import "common";
 
 .index {
+  .landing {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    width: 100vw;
+    height: 100vh;
+    background-color: $dark-brown;
+    animation: background-fadein 2s forwards linear;
+    animation-delay: 2s;
+    &__text {
+      position: absolute;
+      top: 50%;
+      left: 5%;
+      transform: translate(-50%, -50%);
+      -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      white-space: nowrap;
+      letter-spacing: 0.2em;
+      font-size: 32px;
+      color: $pale-brown;
+      animation: text-fadein 2s ease-in forwards;
+      @keyframes text-fadein {
+        0% {
+          opacity: 0;
+          transform: translate3d(30px, 0, 0);
+        }
+        100% {
+          opacity: 1;
+          transform: translate3d(0, 0, 0);
+        }
+      }
+    }
+  }
+  @keyframes background-fadein {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+
   .bg-wrapper {
     position: absolute;
     z-index: -1;
