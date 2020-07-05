@@ -9,6 +9,10 @@
       <div class="mb-6 text-left">
         <label class="font-bold" for="name">
           お名前
+          <span v-if="validations.name" class="alert ml-2">
+            <br class="hidden sp">
+            お名前を入力してください
+          </span>
         </label>
         <br>
         <input
@@ -22,6 +26,10 @@
       <div class="mb-6 text-left">
         <label class="font-bold" for="email">
           メールアドレス
+          <span v-if="validations.email" class="alert ml-2">
+            <br class="hidden sp">
+            メールアドレスを入力してください
+          </span>
         </label>
         <br>
         <input
@@ -35,6 +43,10 @@
       <div class="mb-6 text-left">
         <label class="font-bold" for="order-date">
           ご希望の受け取り日時
+          <span v-if="validations.orderDate" class="alert ml-2">
+            <br class="hidden sp">
+            ご希望の受け取り日時を入力してください
+          </span>
         </label>
         <br>
         <select
@@ -122,6 +134,10 @@
         <div class="mb-6 text-left">
           <label class="font-bold" for="card-number-first">
             カード番号
+            <span v-if="validations.cardNumber" class="alert ml-2">
+              <br class="hidden sp">
+              カード番号を入力してください
+            </span>
           </label>
           <br>
           <input
@@ -160,7 +176,11 @@
         </div>
         <div class="mb-6 text-left">
           <label class="font-bold" for="card-expiry-month">
-            有効期限
+            カードの有効期限
+            <span v-if="validations.cardNumber" class="alert ml-2">
+              <br class="hidden sp">
+              カードの有効期限を入力してください
+            </span>
           </label>
           <br>
           <select
@@ -197,7 +217,7 @@
         </div>
       </div>
       <button
-        @click="showOrderModal = true"
+        @click="confirmForms"
         class="order-btn button--green font-bold"
       >
         注文する
@@ -230,33 +250,79 @@ export default {
       },
       paymentMethod: "online",
       cardNumber: {
-        first: null,
-        second: null,
-        third: null,
-        fourth: null,
+        first: "",
+        second: "",
+        third: "",
+        fourth: "",
       },
       cardExpiry: {
         month: null,
         year: null,
       },
-      showOrderModal: false,
       validations: {
         name: false,
         email: false,
         orderDate: false,
         paymentMethod: false,
-        cardNumber: {
-          first: false,
-          second: false,
-          third: false,
-          fourth: false,
-        },
-        cardExpiry: {
-          month: false,
-          year: false,
-        },
+        cardNumber: false,
+        cardExpiry: false
       },
+      showOrderModal: false,
     }
+  },
+  methods: {
+    resetValidations() {
+      this.validations.name               = false
+      this.validations.email              = false
+      this.validations.orderDate          = false
+      this.validations.cardNumber         = false
+      this.validations.cardExpiry         = false
+    },
+    confirmForms(e) {
+      let error = 0
+      this.resetValidations()
+      if (!this.name)                 { this.validations.name       = true, error += 1 };
+      if (!this.email)                { this.validations.email      = true, error += 1 };
+      if (!this.orderDate.hour)       { this.validations.orderDate  = true, error += 1 };
+      if (!this.orderDate.minute)     { this.validations.orderDate  = true, error += 1 };
+      if (this.paymentMethod == "online") {
+        if (!this.cardNumber.first)   { this.validations.cardNumber = true, error += 1 };
+        if (!this.cardNumber.second)  { this.validations.cardNumber = true, error += 1 };
+        if (!this.cardNumber.third)   { this.validations.cardNumber = true, error += 1 };
+        if (!this.cardNumber.fourth)  { this.validations.cardNumber = true, error += 1 };
+        if (!this.cardExpiry.month)   { this.validations.cardExpiry = true, error += 1 };
+        if (!this.cardExpiry.year)    { this.validations.cardExpiry = true, error += 1 };
+      };
+      if (error > 0) {
+        e.preventDefault();
+      } else {
+        this.resetValidations()
+        this.showOrderModal = true;
+      }
+    }
+  },
+  watch: {
+    "today.month"() {
+      if ([2].includes(this.today.month)) {
+        this.today.maxDate = 28
+      } else if ([4, 6, 9, 11].includes(this.today.month)) {
+        this.today.maxDate = 30
+      } else {
+        this.today.maxDate = 31
+      }
+    },
+    "cardNumber.first"() {
+      this.cardNumber.first = this.cardNumber.first.slice(0, 4)
+    },
+    "cardNumber.second"() {
+      this.cardNumber.second = this.cardNumber.second.slice(0, 4)
+    },
+    "cardNumber.third"() {
+      this.cardNumber.third = this.cardNumber.third.slice(0, 4)
+    },
+    "cardNumber.fourth"() {
+      this.cardNumber.fourth = this.cardNumber.fourth.slice(0, 4)
+    },
   },
 };
 </script>
