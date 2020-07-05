@@ -5,7 +5,7 @@
 - https://famille-kxfwrqdvc.vercel.app/
 
 ## デモ
-![](https://user-images.githubusercontent.com/58162637/86536383-01e80e80-bf22-11ea-8c2d-defe7c414c58.gif)
+![](https://user-images.githubusercontent.com/58162637/86537377-8722f180-bf29-11ea-87ff-30bc2f558884.gif)
 
 ## Build Setup
 
