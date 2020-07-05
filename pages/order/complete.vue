@@ -26,8 +26,16 @@ export default Vue.extend({
     }
   },
   mounted() {
-    setInterval(() => { this.$router.push('/') }, 10000)
+    setTimeout(() => {
+      this.initializeCart(),
+      this.$router.push('/')
+    }, 10000)
   },
+  methods: {
+    initializeCart() {
+      this.$store.dispatch("MenuList/initializeCart")
+    },
+  }
 })
 </script>
 
