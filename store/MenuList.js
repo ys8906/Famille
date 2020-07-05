@@ -36,14 +36,14 @@ export const state = () => ({
     {
       category: "Drink",
       name: "カフェオレ",
-      price: 320,
+      price: 350,
       src: require("@/assets/images/menu/cafe-au-lait.png"),
       count: 0
     },
     {
       category: "Drink",
       name: "カプチーノ",
-      price: 320,
+      price: 350,
       src: require("@/assets/images/menu/cappuccino.png"),
       count: 0
     },
@@ -64,7 +64,7 @@ export const state = () => ({
     {
       category: "Cake",
       name: "チーズケーキ",
-      price: 300,
+      price: 350,
       src: require("@/assets/images/menu/cheese-cake.png"),
       count: 0
     },
@@ -78,7 +78,7 @@ export const state = () => ({
     {
       category: "Cake",
       name: "ホットケーキ",
-      price: 300,
+      price: 400,
       src: require("@/assets/images/menu/pancake.png"),
       count: 0
     },
@@ -92,28 +92,28 @@ export const state = () => ({
     {
       category: "Parfait",
       name: "チョコレートパフェ",
-      price: 320,
+      price: 500,
       src: require("@/assets/images/menu/chocolate-parfait.png"),
       count: 0
     },
     {
       category: "Parfait",
       name: "フルーツパフェ",
-      price: 320,
+      price: 600,
       src: require("@/assets/images/menu/fruit-parfait.png"),
       count: 0
     },
     {
       category: "Parfait",
       name: "抹茶パフェ",
-      price: 320,
+      price: 550,
       src: require("@/assets/images/menu/maccha-parfait.png"),
       count: 0
     },
     {
       category: "Dish",
       name: "オムライス",
-      price: 300,
+      price: 600,
       src: require("@/assets/images/menu/omurice.png"),
       count: 0
     },
@@ -127,14 +127,14 @@ export const state = () => ({
     {
       category: "Dish",
       name: "スクランブルエッグ",
-      price: 300,
+      price: 450,
       src: require("@/assets/images/menu/scramble-egg.png"),
       count: 0
     },
     {
       category: "Dish",
       name: "カルボナーラ",
-      price: 300,
+      price: 700,
       src: require("@/assets/images/menu/carbonara.png"),
       count: 0
     },

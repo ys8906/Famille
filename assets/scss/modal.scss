@@ -37,11 +37,27 @@
       top: 10px;
       right: 10px;
       border: none;
-      filter: drop-shadow(0 10px 5px rgba(0, 0, 0, 0.4));
     }
   }
 
   &__body {
     margin: 20px 0;
+  }
+}
+
+.order-form {
+  .modal {
+    &__container {
+      background-color: $pale-green;
+      width: 80%;
+      height: 80%;
+      overflow-y: auto;
+      color: $dark-green;
+      @media (max-width: 768px) {
+        width: 80%;
+        height: 80%;
+        overflow-y: auto;
+      }
+    }
   }
 }

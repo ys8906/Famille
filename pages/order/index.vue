@@ -45,10 +45,12 @@
         選択した商品がありません
       </div>
     </div>
-    <OrderFormModal
-      v-if="showOrderFormModal"
-      @close="showOrderFormModal = false"
-    />
+    <div class="order-form">
+      <OrderFormModal
+        v-if="showOrderFormModal"
+        @close="showOrderFormModal = false"
+      />
+    </div>
   </div>
 </template>
 

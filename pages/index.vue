@@ -18,7 +18,7 @@
         MENU
       </nuxt-link>
       <nuxt-link
-        to="/check"
+        to="/order"
         class="menu-btn mb-8"
       >
         ORDER

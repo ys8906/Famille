@@ -1,0 +1,22 @@
+@import "common";
+
+input, select {
+  background-color: $dark-green;
+  border-radius: 16px;
+  border-right: 5px ridge $pale-brown;
+  border-left: 5px groove $pale-brown;
+  text-align: center;
+  color: $pale-green;
+}
+select {
+  padding-left: 8px;
+  padding-right: 4px;
+}
+.input-small {
+  width: 100px;
+}
+.sp {
+  @media screen and (max-width: 768px) {
+    display: block;
+  }
+}

@@ -15,11 +15,25 @@ body {
   font-family: cursive, 'arial unicode ms';
 }
 
-a, button {
+a, button, input, select {
   cursor: url("~@/assets/images/system/cursor.svg"), auto;
   transition-duration: 0.3s;
   &:hover {
     opacity: 0.7;
+  }
+}
+
+label {
+  cursor: url("~@/assets/images/system/cursor.svg"), auto;
+}
+
+// Transitions
+.fade {
+  &-enter-active, &-leave-active {
+    transition: opacity .5s;
+  }
+  &-enter, &-leave-to {
+    opacity: 0;
   }
 }
 
@@ -92,7 +106,7 @@ a, button {
   display: inline-block;
   border-radius: 16px;
   border: 1px solid $dark-green;
-  color: #3b8070;
+  color: $dark-green;
   text-decoration: none;
   padding: 5px 30px;
 }

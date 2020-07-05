@@ -16,9 +16,9 @@
   {
     "name": "order",
     "path": "/order",
-    "component": "/Users/yoshitosato/src/Famille/pages/order.vue",
-    "chunkName": "pages/order",
-    "_name": "_b382befc"
+    "component": "/Users/yoshitosato/src/Famille/pages/order/index.vue",
+    "chunkName": "pages/order/index",
+    "_name": "_557d3d85"
   },
   {
     "name": "index",

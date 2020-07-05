@@ -10,12 +10,3 @@
     transform: scale(1.05);
   }
 }
-
-.fade {
-  &-enter-active, &-leave-active {
-    transition: opacity .5s;
-  }
-  &-enter, &-leave-to {
-    opacity: 0;
-  }
-}
