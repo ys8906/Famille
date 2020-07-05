@@ -1,9 +1,9 @@
 # Famille
 
 ## 概要
-create-nuxt-app
-https://famille-kxfwrqdvc.vercel.app/
-https://user-images.githubusercontent.com/58162637/86535978-1545aa80-bf1f-11ea-8411-d1a90190d670.gif
+- create-nuxt-app
+- https://famille-kxfwrqdvc.vercel.app/
+![](https://user-images.githubusercontent.com/58162637/86535978-1545aa80-bf1f-11ea-8411-d1a90190d670.gif)
 
 ## Build Setup
 
