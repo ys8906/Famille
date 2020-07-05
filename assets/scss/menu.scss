@@ -1,0 +1,36 @@
+@import "common";
+
+.menu-img {
+  min-width: 200px;
+}
+
+.category-wrapper {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+}
+
+.category-button {
+  padding: 8px 24px;
+  border-radius: 16px;
+  background-color: $dark-brown;
+  filter: drop-shadow(0 10px 5px rgba(0, 0, 0, 0.4));
+  text-align: center;
+  font-size: 16px;
+  color: #fff;
+  font-weight: bold;
+  &:hover {
+    opacity: 0.7;
+  }
+  @media screen and (max-width: 768px) {
+    padding: 8px;
+    width: 72px;
+    font-size: 12px;
+  }
+}
+
+.selected {
+  opacity: 0.7;  
+}

@@ -1,0 +1,141 @@
+// Colors
+$dark-brown: #A7845E;
+$pale-brown: #EEE4B7;
+$dark-green: #1F7417;
+$pale-green: #ABDBA1;
+$danger: #800;
+
+// Defaults
+html {
+  background-color: $pale-brown;
+  cursor: url("~@/assets/images/system/cursor.svg"), auto;
+}
+
+body {
+  font-family: cursive, 'arial unicode ms';
+}
+
+a, button, input, select {
+  cursor: url("~@/assets/images/system/cursor.svg"), auto;
+  transition-duration: 0.3s;
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
+label {
+  cursor: url("~@/assets/images/system/cursor.svg"), auto;
+}
+
+input:focus, select:focus, button:focus {
+  opacity: 0.7;
+  outline: 0;
+}
+
+// Transitions
+.fade {
+  &-enter-active, &-leave-active {
+    transition: opacity .5s;
+  }
+  &-enter, &-leave-to {
+    opacity: 0;
+  }
+}
+
+// Shared components
+.header-pc {
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
+}
+
+.header-sp {
+  display: none;
+  @media screen and (max-width: 768px) {
+    display: block;
+    background-color: $pale-green;
+    min-width: 300px;
+    filter: drop-shadow(0 10px 5px rgba(0, 0, 0, 0.4));
+    border-radius: 16px;
+  }
+  .drawer-btn {
+    position: absolute;
+    right: 10px;
+    top: 13px;
+    background-color: $dark-green;
+    border: 5px ridge $pale-brown;
+    width: 35px;
+    height: 35px;
+    border-radius: 35px;
+    &:hover {
+      background-color: $pale-green;
+    }
+  }
+  .title {
+    text-transform: capitalize;
+    color: $dark-green;
+  }
+}
+.sp-navigation {
+  &-enter-active {
+    transition: opacity .5s;
+  }
+  &-enter {
+    opacity: 0;
+  }
+}
+
+.container {
+  margin: auto;
+}
+
+.menu-btn {
+  width: 160px;
+  padding: 8px 24px;
+  border-radius: 16px;
+  border-right: 5px ridge $pale-brown;
+  border-left: 5px groove $pale-brown;
+  filter: drop-shadow(0 10px 5px rgba(0, 0, 0, 0.4));
+  background-color: $dark-green;
+  text-align: center;
+  font-size: 20px;
+  color: #ABDBA1;
+  font-weight: bold;
+  &:hover {
+    background-color: $pale-green;
+    color: #fff;
+  }
+}
+.nuxt-link-exact-active {
+  background-color: $pale-green;
+  color: #fff;
+}
+
+.button--green {
+  display: inline-block;
+  border-radius: 16px;
+  border: 1px solid $dark-green;
+  color: $dark-green;
+  text-decoration: none;
+  padding: 5px 30px;
+}
+
+.button--green:hover {
+  color: #fff;
+  background-color: #3b8070;
+}
+
+.button--grey {
+  display: inline-block;
+  border-radius: 16px;
+  border: 1px solid #35495e;
+  color: #35495e;
+  text-decoration: none;
+  padding: 5px 30px;
+  margin-left: 15px;
+}
+
+.button--grey:hover {
+  color: #fff;
+  background-color: #35495e;
+}

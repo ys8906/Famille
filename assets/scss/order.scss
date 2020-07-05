@@ -1,0 +1,16 @@
+@import "common";
+
+table {
+  border-radius: 16px;
+  background-color: $dark-brown;
+}
+
+th {
+  border-bottom: 1px solid $pale-brown;
+}
+
+.order-btn {
+  background-color: $pale-brown;
+  border: none;
+  color: $dark-brown;
+}

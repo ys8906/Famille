@@ -1,0 +1,65 @@
+@import "common";
+
+.complete-wrapper {
+  width: vmax;
+  height: 100vh;
+  background-image: url("~@/assets/images/order/complete/main-image.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-repeat: cover;
+  .greeting {
+    animation: SlideInHorizontal 1.5s forwards;
+    animation-delay: 1s;
+    opacity: 0;
+  }
+  .caption {
+    &__bar {
+      animation: SlideInVertical 1.5s;
+      height: 100vh;
+      background-color: $pale-brown;
+      filter: blur(4px);
+      @media screen and (max-width: 768px) {
+        animation: SlideInHorizontal 1.5s;
+        bottom: 150px;
+        height: 100px;
+        width: 100vw;
+        margin-right: 0;
+        background-color: $dark-brown;
+      }
+    }
+    &__text {
+      animation: SlideInVertical 1.5s;
+      writing-mode: vertical-rl;
+      color: $dark-brown;
+      @media screen and (max-width: 768px) {
+        color: $pale-brown;
+        animation: SlideInHorizontal 1.5s;
+        writing-mode: horizontal-tb;
+        bottom: 180px;
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+@keyframes SlideInHorizontal {
+  0% {
+    opacity: 0;
+    transform: translateX(-200px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes SlideInVertical {
+  0% {
+    opacity: 0;
+    transform: translateY(-200px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

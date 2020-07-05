@@ -1,0 +1,37 @@
+[
+  {
+    "name": "members",
+    "path": "/members",
+    "component": "/Users/yoshitosato/src/Famille/pages/members.vue",
+    "chunkName": "pages/members",
+    "_name": "_42670dcd"
+  },
+  {
+    "name": "menu",
+    "path": "/menu",
+    "component": "/Users/yoshitosato/src/Famille/pages/menu.vue",
+    "chunkName": "pages/menu",
+    "_name": "_5def1f5b"
+  },
+  {
+    "name": "order",
+    "path": "/order",
+    "component": "/Users/yoshitosato/src/Famille/pages/order/index.vue",
+    "chunkName": "pages/order/index",
+    "_name": "_557d3d85"
+  },
+  {
+    "name": "order-complete",
+    "path": "/order/complete",
+    "component": "/Users/yoshitosato/src/Famille/pages/order/complete.vue",
+    "chunkName": "pages/order/complete",
+    "_name": "_5020ea56"
+  },
+  {
+    "name": "index",
+    "path": "/",
+    "component": "/Users/yoshitosato/src/Famille/pages/index.vue",
+    "chunkName": "pages/index",
+    "_name": "_e5183ff4"
+  }
+]

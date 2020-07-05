@@ -1,0 +1,75 @@
+@import "common";
+
+.confirm-btn {
+  display: inline-block;
+  width: 90px;
+  padding: 8px 12px;
+  border-radius: 16px;
+  border-right: 5px ridge $pale-brown;
+  border-left: 5px groove $pale-brown;
+  background-color: #29991f;
+  text-align: center;
+  font-size: 16px;
+  color: $pale-brown;
+  font-weight: bold;
+  &:hover {
+    background-color: $pale-green;
+    color: #fff;
+  }
+}
+
+// Loader
+.loader, .loader::before, .loader::after {
+  border-radius: 50%;
+  width: 2.5em;
+  height: 2.5em;
+  -webkit-animation: load7 1.8s infinite ease-in-out;
+  animation: load7 1.8s infinite ease-in-out;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+.loader {
+  color: #fff;
+  font-size: 10px;
+  margin: 0 auto 50px auto;
+  position: relative;
+  text-indent: -9999em;
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-animation-delay: -0.16s;
+  animation-delay: -0.16s;
+}
+.loader::before, .loader::after {
+  content: '';
+  position: absolute;
+  top: 0;
+}
+.loader::before {
+  left: -3.5em;
+  -webkit-animation-delay: -0.32s;
+  animation-delay: -0.32s;
+}
+.loader::after {
+  left: 3.5em;
+}
+@-webkit-keyframes load7 {
+  0%,
+  80%,
+  100% {
+    box-shadow: 0 2.5em 0 -1.3em;
+  }
+  40% {
+    box-shadow: 0 2.5em 0 0;
+  }
+}
+@keyframes load7 {
+  0%,
+  80%,
+  100% {
+    box-shadow: 0 2.5em 0 -1.3em;
+  }
+  40% {
+    box-shadow: 0 2.5em 0 0;
+  }
+}

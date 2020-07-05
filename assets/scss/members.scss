@@ -1,0 +1,14 @@
+@import "common.scss";
+
+.members {
+  .person-box {
+    padding: 10px 20px;
+    border-radius: 16px;
+    transition-duration: 0.3s;
+    &:hover {
+      z-index: 1;
+      box-shadow: 0 8px 50px rgba(black, 0.2);
+      transform: scale(1.05);
+    }
+  }
+}
